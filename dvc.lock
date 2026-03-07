@@ -1,0 +1,40 @@
+schema: '2.0'
+stages:
+  validate:
+    cmd: python src/validate_data.py
+    deps:
+    - path: data/raw_data.csv
+      hash: md5
+      md5: 186339f341099a789c43b2c18960e16b
+      size: 93198
+    - path: src/validate_data.py
+      hash: md5
+      md5: 7250b820342611f2aad04dac0e29e6bc
+      size: 1706
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/cleaned_data.csv
+      hash: md5
+      md5: fd73087f9a5e683676fdbed8b01510bb
+      size: 107325
+    - path: src/train.py
+      hash: md5
+      md5: 6f7118d4638ca9c9b6ddaebc408fecf2
+      size: 1557
+  clean:
+    cmd: python src/clean_data.py
+    deps:
+    - path: data/raw_data.csv
+      hash: md5
+      md5: 186339f341099a789c43b2c18960e16b
+      size: 93198
+    - path: src/clean_data.py
+      hash: md5
+      md5: 3d2e52785d62965d4cc2c413ae7dec11
+      size: 739
+    outs:
+    - path: data/cleaned_data.csv
+      hash: md5
+      md5: fd73087f9a5e683676fdbed8b01510bb
+      size: 107325

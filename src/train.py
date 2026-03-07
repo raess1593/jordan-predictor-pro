@@ -6,18 +6,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error
 
-from validate_data import validate_data_func
-
 def train_model():
-    if not validate_data_func():
-        print("Data is not validate")
-        return
 
     #mlflow.create_experiment("my_model")
     mlflow.set_experiment("my_model")
 
     root_path = Path(__file__).parent.parent
-    data_path = root_path / 'data' / 'raw_data.csv'
+    data_path = root_path / 'data' / 'cleaned_data.csv'
     df = pd.read_csv(data_path)
 
     X = df['stock'].values.reshape(-1, 1)

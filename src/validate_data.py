@@ -44,4 +44,12 @@ def validate_data_func():
 
     results = checkpoints.run(batch_parameters={"dataframe": df})
 
-    return results.success
+    if results.success:
+        print("✓ Data validation passed")
+        return True
+    else:
+        print("✗ Data validation failed")
+        return False
+
+if __name__ == "__main__":
+    validate_data_func()
