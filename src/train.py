@@ -6,9 +6,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error
 
-def train_model():
 
-    #mlflow.create_experiment("my_model")
+def train_model():
     mlflow.set_experiment("my_model")
 
     root_path = Path(__file__).parent.parent
@@ -22,7 +21,7 @@ def train_model():
         X, y, random_state=42, shuffle=True, test_size=0.2
     )
 
-    with mlflow.start_run(run_name="RamdomForest"):
+    with mlflow.start_run(run_name="RandomForest"):
         params = {
             'n_estimators': 100,
             'max_depth': 5,
@@ -40,7 +39,7 @@ def train_model():
         mlflow.log_metric("rmse", rmse)
 
         mlflow.sklearn.log_model(rf, "price_by_stock_model")
-        print(f"Modelo entrenado. MAE: {mae:.2f} -- RMSE: {rmse:.2f}")
+        print(f"Model trained. MAE: {mae:.2f} -- RMSE: {rmse:.2f}")
 
 if __name__ == "__main__":
     train_model()
