@@ -79,6 +79,9 @@ Start the API server:
 uvicorn src.api:app --reload
 ```
 
+![Example: ](assets/f1.png)
+![](assets/f2.png)
+
 Open your browser at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) for interactive Swagger UI.
 
 **Endpoints:**
