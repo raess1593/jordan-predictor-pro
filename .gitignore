@@ -1,0 +1,22 @@
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local MLflow artifacts
+mlruns/
+mlflow.db
+
+# Jupyter and editor artifacts
+.ipynb_checkpoints/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
