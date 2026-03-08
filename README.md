@@ -1,16 +1,20 @@
-# jordan-predictor-pro
+# 👟 jordan-predictor-pro
 
-Simple ML pipeline to validate, clean, train, and predict sneaker prices from stock values.
+Simple, reproducible *Machine Learning* pipeline to **validate**, **clean**, **train**, and **predict** sneaker prices from stock values.
 
-## Project structure
+---
 
-- `data/`: raw and cleaned CSV data (tracked with DVC)
-- `src/`: Python scripts for generation, validation, cleaning, training, and prediction
-- `notebooks/`: optional exploration notebooks
-- `tests/`: test placeholders
-- `dvc.yaml`: pipeline definition
+## 🗂️ Project structure
 
-## Quick Start
+- `data/` 📁: raw and cleaned CSV data (**tracked with DVC**)
+- `src/` 🧠: Python scripts for generation, validation, cleaning, training, and prediction
+- `notebooks/` 📓: optional exploration notebooks
+- `tests/` 🧪: test placeholders
+- `dvc.yaml` 🔁: pipeline definition
+
+---
+
+## 🚀 Quick Start
 
 1. **Install dependencies:**
    ```bash
@@ -29,7 +33,9 @@ Simple ML pipeline to validate, clean, train, and predict sneaker prices from st
    dvc repro
    ```
 
-3. **Use the API or CLI for predictions** (see below)
+3. **Use the API or CLI for predictions** 🔮 (see below)
+
+---
 
 ## Pipeline (DVC)
 
@@ -47,13 +53,13 @@ python src/clean_data.py
 python src/train.py
 ```
 
-## Generate synthetic raw data
+---
+
+## 🧪 Generate synthetic raw data
 
 ```bash
 python src/generate_raw_data.py
 ```
-
-## Predict
 
 ### CLI
 
@@ -61,7 +67,9 @@ python src/generate_raw_data.py
 python src/predict.py --stock 20
 ```
 
-### API (FastAPI)
+---
+
+### API (FastAPI) 🌐
 
 **⚠️ Important:** Train the model first (see Quick Start above)!
 
